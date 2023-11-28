@@ -4,17 +4,20 @@ services:
   postgres:
     image: postgres:alpine
     environment:
-      POSTGRES_USER: sige
-      POSTGRES_PASSWORD: pass
+      POSTGRES_USER: dejangosigehk
+      POSTGRES_PASSWORD: NoqL5OOr092D
     volumes:
       - ./database:/var/lib/postgresql/data
   gunicorn:
-    image: djangosige
+    build: .
+    # image: andrecamara/djangosige
     command: gunicorn -b 0.0.0.0:8000 djangosige.wsgi:application
     environment:
+      # - DEBUG=True
+      # - DJANGO_DEVELOPMENT=True
       - SECRET_KEY=0#pny4oox9s#+#5dkde25dj79b-o^sdbz4kiumg#e1qx3ky
       - ALLOWED_HOSTS='gunicorn'
-      - DATABASE_URL=postgres://sige:pass@postgres/sige
+      - DATABASE_URL=postgres://dejangosigehk:NoqL5OOr092D@postgres/dejangosigehk
     volumes:
       - ./:/opt/djangoSIGE/
     links:
@@ -27,6 +30,6 @@ services:
       - ./djangosige/static/:/opt/djangoSIGE/static/
       - ./djangosige/media/:/opt/djangoSIGE/media/
     ports:
-      - 80:80
+      - 6000:80
     links:
       - gunicorn

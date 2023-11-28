@@ -13,6 +13,8 @@ PROJECT_ROOT = os.path.abspath(os.path.dirname(APP_ROOT))
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = config('SECRET_KEY')
 
+CSRF_TRUSTED_ORIGINS = ['http://*.127.0.0.1', 'https://*.mullerkahl.com.br']
+
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = config('DEBUG', default=False, cast=bool)
 
