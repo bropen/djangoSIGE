@@ -42,7 +42,7 @@ djangosige/configs/configs.py
 djangosige/media/imagens/usuarios/
 .env
 .venv/
-*.sqlite3
+db.sqlite3
 env/
 database/
 /venv/
