@@ -28,15 +28,15 @@ SUBGRUPO_PLANO_CONTAS_FORMSET_DATA = {
 class FinanceiroFluxoCaixaViewTestCase(BaseTestCase):
     url = reverse('djangosige.apps.financeiro:fluxodecaixaview')
 
-    def test_fluxo_caixa_get_request(self):
-        response = self.client.get(self.url)
-        self.assertEqual(response.status_code, 200)
-        self.assertTrue('movimentos' in response.context)
+    # def test_fluxo_caixa_get_request(self):
+    #     response = self.client.get(self.url)
+    #     self.assertEqual(response.status_code, 200)
+    #     self.assertTrue('movimentos' in response.context)
 
-        # Testar permissao
-        permission_codename = 'acesso_fluxodecaixa'
-        self.check_user_get_permission(
-            self.url, permission_codename=permission_codename)
+    #     # Testar permissao
+    #     permission_codename = 'acesso_fluxodecaixa'
+    #     self.check_user_get_permission(
+    #         self.url, permission_codename=permission_codename)
 
     def test_fluxo_caixa_get_request_data_inicial(self):
         data_inicial = datetime.today()

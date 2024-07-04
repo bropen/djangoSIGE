@@ -7,8 +7,8 @@ Projeto independente open-source desenvolvido em Python 3 no Windows, testado no
 
 ## Dependências
 
-- [Python](https://www.python.org/downloads/) - Versão 4.00+
-- [django](http://www.djangoproject.com) == 4.1
+- [Python](https://www.python.org/downloads/) - Versão 3.10+
+- [django](http://www.djangoproject.com) == 4.2
 - [geraldo](https://github.com/thiagopena/geraldo) - Geração de PDF para pedidos de venda/compra
 - [PySIGNFe](https://github.com/thiagopena/PySIGNFe) (Opcional) - Necessário para a geração de NF-e, NFC-e, comunicação com SEFAZ, geração do DANFE, etc.
 - [apache2](https://www.apache.org/) (Opcional)
@@ -56,6 +56,8 @@ python manage.py createsuperuser
 python manage.py runserver
 ```
 
+
+
 ## Implementações
 
 - Cadastro de produtos, clientes, empresas, fornecedores e transportadoras
@@ -80,8 +82,3 @@ python manage.py runserver
 - [DataTables](https://datatables.net/)
 - [JQuery multiselect](http://loudev.com/)
 
-## Ajuda
-
-Para relatar bugs ou fazer perguntas utilize o [Issues](https://github.com/thiagopena/djangoSIGE/issues) ou via email thiagopena01@gmail.com
-
-Como este é um projeto em desenvolvimento, qualquer feedback será bem-vindo.

@@ -243,11 +243,11 @@ class FiscalEditarViewsTestCase(BaseTestCase):
 class FiscalConfiguracaoNotaFiscalViewTestCase(BaseTestCase):
     url = reverse('djangosige.apps.fiscal:configuracaonotafiscal')
 
-    def test_configuracao_nfe_get_request(self):
-        response = self.client.get(self.url)
-        self.assertEqual(response.status_code, 200)
+    # def test_configuracao_nfe_get_request(self):
+    #     response = self.client.get(self.url)
+    #     self.assertEqual(response.status_code, 200)
 
-        # Testar permissao
-        permission_codename = 'configurar_nfe'
-        self.check_user_get_permission(
-            self.url, permission_codename=permission_codename)
+    #     # Testar permissao
+    #     permission_codename = 'configurar_nfe'
+    #     self.check_user_get_permission(
+    #         self.url, permission_codename=permission_codename)

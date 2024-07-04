@@ -11,22 +11,23 @@ PROJECT_ROOT = os.path.abspath(os.path.dirname(APP_ROOT))
 # See https://docs.djangoproject.com/en/1.10/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = config('SECRET_KEY')
+SECRET_KEY = config('SECRET_KEY', default='CHANGEME')
 
-CSRF_TRUSTED_ORIGINS = ['http://*.127.0.0.1', 'https://*.mullerkahl.com.br']
+CSRF_TRUSTED_ORIGINS = ['http://*.127.0.0.1',]
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = config('DEBUG', default=False, cast=bool)
+DEBUG = config('DEBUG', default=True, cast=bool)
 
-ALLOWED_HOSTS = config('ALLOWED_HOSTS', default=[], cast=Csv())
+ALLOWED_HOSTS = config('ALLOWED_HOSTS', default=['*',], cast=list)
 
 if not DEFAULT_DATABASE_URL:
-    DEFAULT_DATABASE_URL = 'sqlite:///' + os.path.join(APP_ROOT, 'db.sqlite3')
+    DEFAULT_DATABASE_URL = 'sqlite:///' + os.path.join(APP_ROOT, 'demo-db.sqlite3')
 
 DATABASES = {
     'default': config('DATABASE_URL', default=DEFAULT_DATABASE_URL, cast=dburl),
 }
 
+DEFAULT_AUTO_FIELD = "django.db.models.AutoField"
 
 # Application definition
 
